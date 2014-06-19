@@ -1,0 +1,24 @@
+name:          ditaa-img
+version:       1.0
+cabal-version: >= 1.2
+build-type:    Simple
+synopsis:      Convert Markdown with Ditaa diagrams to Markdown with images
+description:
+   Convert Markdown with Ditaa plain-text diagrams to Markdown with images.
+   Ditaa diagram may be written as code blocks in Github flavored Markdown
+   with a `ditaa` class.
+   .
+   DITAA_CMD environment variable defines how Ditaa should be called.
+   INPUT and OUTPUT should be used as placeholders for the file names.
+   If not set, the default value is "ditaa INPUT OUTPUT".
+
+executable ditaa-img
+  main-is: ditaa-img.hs
+  build-depends: pandoc >= 1.12 && < 2
+               , pandoc-types >= 1.12 && < 2
+               , base >= 4 && < 5
+               , bytestring
+               , digest
+               , filepath
+               , process
+               , temporary
