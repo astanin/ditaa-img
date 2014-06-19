@@ -23,11 +23,13 @@ Usage
 
 Ditaa diagram format in github-flavored markdown:
 
-   ```ditaa
-     +-----+    +------+
-     |hello|--->|world!|
-     +-----+    +------+
-   ```
+<pre><code>
+```ditaa
++-----+    +------+
+|hello|--->|world!|
++-----+    +------+
+```
+</code></pre>
 
 DITAA_CMD environment variable defines how Ditaa should be called.
 INPUT and OUTPUT should be used as placeholders for the file names.
