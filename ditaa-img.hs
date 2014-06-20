@@ -116,9 +116,9 @@ replaceDitaaCodeBlock _ otherblock = return otherblock
 
 convertMd2Md :: String -> String -> IO String
 convertMd2Md ditaaCmd src = do
-  let pd = readMarkdown def src
-  newPd <- walkM (replaceDitaaCodeBlock ditaaCmd) pd
-  return $ writeMarkdown def newPd
+  let doc = readMarkdown def {readerExtensions = pandocExtensions} src
+  newDoc <- walkM (replaceDitaaCodeBlock ditaaCmd) doc
+  return $ writeMarkdown def {writerExtensions = pandocExtensions} newDoc
 
 
 
